@@ -3,7 +3,7 @@
 ### 1. Clonar o Repositório
 Primeiro, clone este repositório para o seu ambiente local usando Git. Abra um terminal e execute o seguinte comando:
 ```sh
-git clone git@github.com:lvgalvao/dbt-core-northwind-project.git
+git clone /dbt-core-northwind-project.git
 cd dbt-core-northwind-project
 ```
 

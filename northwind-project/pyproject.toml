@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "northwind-project"
+version = "0.1.0"
+description = ""
+authors = ["Lorenzo Uriel <lorenzo.uriel@geosiga.com.br>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "3.12.1"
+dbt-postgres = "^1.9.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
