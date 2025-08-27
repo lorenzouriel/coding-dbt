@@ -1,0 +1,4 @@
+## Environment
+```bash
+poetry shell 
+```

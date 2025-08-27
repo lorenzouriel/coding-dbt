@@ -1,0 +1,103 @@
+version: 2
+
+models:
+  - name: stg_customers
+    description: "This table is a staging table for customers data."
+    columns:
+      - name: customer_id
+        description: "The unique identifier for a customer."
+        tests: 
+          - not_null
+          - unique
+      - name: company_name
+        description: "The name of the customer's company."
+        tests: 
+          - not_null
+          - unique
+      - name: contact_name
+        description: "The name of the contact person for the customer."
+        tests: 
+          - not_null
+          - unique
+      - name: contact_title
+        description: "The title of the contact person for the customer."
+        tests: 
+          - not_null
+      - name: address
+        description: "The street address of the customer."
+        tests: 
+          - not_null
+      - name: city
+        description: "The city where the customer is located."
+        tests: 
+          - not_null
+      - name: region
+        description: "The region where the customer is located."
+        tests: 
+          - not_null
+      - name: postal_code
+        description: "The postal code of the customer's address."
+        tests: 
+          - not_null
+          - unique
+      - name: country
+        description: "The country where the customer is located."
+        tests: 
+          - not_null
+      - name: phone
+        description: "The phone number of the customer."
+        tests: 
+          - not_null
+          - unique
+      - name: fax
+        description: "The fax number of the customer."
+        tests: 
+          - not_null
+          - unique
+
+  - name: stg_orders
+    description: "This table is a staging table for orders data."
+    columns:
+      - name: order_id
+        description: "The unique identifier for an order."
+        tests: 
+          - not_null
+          - unique
+      - name: customer_id
+        description: "The identifier for the customer who placed the order."
+        tests: 
+          - not_null
+          - relationships:
+              to: ref('stg_customers')
+              field: customer_id
+      - name: employee_id
+        description: "The identifier for the employee who processed the order."
+        tests: 
+          - not_null
+      - name: order_date
+        description: "The date when the order was placed."
+        tests: 
+          - not_null
+      - name: required_date
+        description: "The date when the order is required to be delivered."
+        tests: 
+          - not_null
+      - name: shipped_date
+        description: "The date when the order was shipped."
+      - name: ship_via
+        description: "The identifier for the shipping method used."
+      - name: freight
+        description: "The freight cost for the order."
+      - name: ship_name
+        description: "The name of the recipient for the shipment."
+      - name: ship_address
+        description: "The street address for the shipment."
+      - name: ship_city
+        description: "The city for the shipment."
+      - name: ship_region
+        description: "The region for the shipment."
+      - name: ship_postal_code
+        description: "The postal code for the shipment."
+      - name: ship_country
+        description: "The country for the shipment."
+        
