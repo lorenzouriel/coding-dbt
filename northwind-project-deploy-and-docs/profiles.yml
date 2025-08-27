@@ -1,0 +1,13 @@
+northwinddeploy:
+  target: prod
+  outputs:
+    prod:
+      type: postgres
+      host: ---.amazonaws.com # "{{ env_var('DB_HOST_PROD') }}"
+      user: postgres # "{{ env_var('DB_USER_PROD') }}"
+      password: postgres # "{{ env_var('DB_PASS_PROD') }}"
+      port: 5432 #"{{ env_var('DB_PORT_PROD') | int }}"
+      dbname: postgres #"{{ env_var('DB_NAME_PROD') }}"
+      schema: public #"{{ env_var('DB_SCHEMA_PROD') }}"
+      threads: 1 #"{{ env_var('DB_THREADS_PROD') | int }}"
+      keepalives_idle: 0
